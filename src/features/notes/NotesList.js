@@ -6,7 +6,7 @@ const NotesList = () => {
 
 	let content;
 
-	if (isLoading) content = <p>Loading...</p>;
+	if (isLoading) content = <p>Загрузка...</p>;
 
 	if (isError) {
 		content = <p className="errmsg">{error?.data?.message}</p>;
@@ -27,19 +27,19 @@ const NotesList = () => {
 							Username
 						</th>
 						<th scope="col" className="table__th note__created">
-							Created
+							Создана
 						</th>
 						<th scope="col" className="table__th note__updated">
-							Updated
+							Обновлено
 						</th>
 						<th scope="col" className="table__th note__title">
-							Title
+							заголовок
 						</th>
 						<th scope="col" className="table__th note__username">
-							Owner
+							Владелец
 						</th>
 						<th scope="col" className="table__th note__edit">
-							Edit
+							Редактировано
 						</th>
 					</tr>
 				</thead>

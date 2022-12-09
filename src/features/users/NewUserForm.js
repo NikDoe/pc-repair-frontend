@@ -17,7 +17,7 @@ const NewUserForm = () => {
 	const [validUsername, setValidUsername] = useState(false);
 	const [password, setPassword] = useState('');
 	const [validPassword, setValidPassword] = useState(false);
-	const [roles, setRoles] = useState(['Employee']);
+	const [roles, setRoles] = useState(['Работник']);
 
 	useEffect(() => {
 		setValidUsername(USER_REGEX.test(username));
@@ -97,7 +97,7 @@ const NewUserForm = () => {
 				/>
 
 				<label className="form__label" htmlFor="password">
-					Password: <span className="nowrap">[4-12 chars incl. !@#$%]</span>
+					Пароль: <span className="nowrap">[4-12 chars incl. !@#$%]</span>
 				</label>
 				<input
 					className={`form__input ${validPwdClass}`}
@@ -109,7 +109,7 @@ const NewUserForm = () => {
 				/>
 
 				<label className="form__label" htmlFor="roles">
-					ASSIGNED ROLES:
+					Роли пользователя:
 				</label>
 				<select
 					id="roles"

@@ -6,7 +6,7 @@ const UsersList = () => {
 
 	let content;
 
-	if (isLoading) content = <p>Loading...</p>;
+	if (isLoading) content = <p>Загрузка...</p>;
 
 	if (isError) {
 		content = <p className="errmsg">{error?.data?.message}</p>;
@@ -27,10 +27,10 @@ const UsersList = () => {
 							Username
 						</th>
 						<th scope="col" className="table__th user__roles">
-							Roles
+							Роли
 						</th>
 						<th scope="col" className="table__th user__edit">
-							Edit
+							Редактирован
 						</th>
 					</tr>
 				</thead>
