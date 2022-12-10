@@ -11,12 +11,12 @@ const Note = ({ noteId }) => {
 	const navigate = useNavigate();
 
 	if (note) {
-		const created = new Date(note.createdAt).toLocaleString('en-US', {
+		const created = new Date(note.createdAt).toLocaleString('ru-RU', {
 			day: 'numeric',
 			month: 'long',
 		});
 
-		const updated = new Date(note.updatedAt).toLocaleString('en-US', {
+		const updated = new Date(note.updatedAt).toLocaleString('ru-RU', {
 			day: 'numeric',
 			month: 'long',
 		});
@@ -29,7 +29,7 @@ const Note = ({ noteId }) => {
 					{note.completed ? (
 						<span className="note__status--completed">Завершена</span>
 					) : (
-						<span className="note__status--open">Открыта</span>
+						<span className="note__status--open">Не выполнено</span>
 					)}
 				</td>
 				<td className="table__cell note__created">{created}</td>

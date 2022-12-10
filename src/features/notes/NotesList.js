@@ -36,10 +36,10 @@ const NotesList = () => {
 							заголовок
 						</th>
 						<th scope="col" className="table__th note__username">
-							Владелец
+							Исполнитель
 						</th>
 						<th scope="col" className="table__th note__edit">
-							Редактировано
+							Редактировать
 						</th>
 					</tr>
 				</thead>
