@@ -57,7 +57,7 @@ const Login = () => {
 	return (
 		<section className="public">
 			<header>
-				<h1>Employee Login</h1>
+				<h1>Вход в кабинет работника</h1>
 			</header>
 			<main className="login">
 				<p ref={errRef} className={errClass} aria-live="assertive">
@@ -90,7 +90,7 @@ const Login = () => {
 				</form>
 			</main>
 			<footer>
-				<Link to="/">Back to Home</Link>
+				<Link to="/">Вернуться на главную</Link>
 			</footer>
 		</section>
 	);
