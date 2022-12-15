@@ -5,6 +5,8 @@ import NewNoteForm from './NewNoteForm';
 const NewNote = () => {
 	const users = useSelector(selectAllUsers);
 
-	return users ? <NewNoteForm users={users} /> : <p>Loading...</p>;
+	if (!users?.length) return <p>В настоящее время недоступно</p>;
+
+	return <NewNoteForm users={users} />;
 };
 export default NewNote;
