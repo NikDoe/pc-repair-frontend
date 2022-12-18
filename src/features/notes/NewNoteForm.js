@@ -56,7 +56,7 @@ const NewNoteForm = ({ users }) => {
 				<div className="form__title-row">
 					<h2>Новая заметка</h2>
 					<div className="form__action-buttons">
-						<button className="icon-button" title="Save" disabled={!canSave}>
+						<button className="icon-button" title="Сохранить" disabled={!canSave}>
 							<FontAwesomeIcon icon={faSave} />
 						</button>
 					</div>

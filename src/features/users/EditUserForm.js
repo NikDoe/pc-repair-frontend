@@ -91,11 +91,11 @@ const EditUserForm = ({ user }) => {
 
 			<form className="form" onSubmit={e => e.preventDefault()}>
 				<div className="form__title-row">
-					<h2>Edit User</h2>
+					<h2>Редактирование пользователя</h2>
 					<div className="form__action-buttons">
 						<button
 							className="icon-button"
-							title="Save"
+							title="Сохранить"
 							onClick={onSaveUserClicked}
 							disabled={!canSave}
 						>
@@ -103,7 +103,7 @@ const EditUserForm = ({ user }) => {
 						</button>
 						<button
 							className="icon-button"
-							title="Delete"
+							title="Удалить"
 							onClick={onDeleteUserClicked}
 						>
 							<FontAwesomeIcon icon={faTrashCan} />
@@ -111,7 +111,7 @@ const EditUserForm = ({ user }) => {
 					</div>
 				</div>
 				<label className="form__label" htmlFor="username">
-					Username: <span className="nowrap">[3-20 letters]</span>
+					Username: <span className="nowrap">[3-20 символов]</span>
 				</label>
 				<input
 					className={`form__input ${validUserClass}`}
@@ -124,8 +124,8 @@ const EditUserForm = ({ user }) => {
 				/>
 
 				<label className="form__label" htmlFor="password">
-					Password: <span className="nowrap">[empty = no change]</span>{' '}
-					<span className="nowrap">[4-12 chars incl. !@#$%]</span>
+					Пароль: <span className="nowrap">[пустой нельзя сохранить]</span>{' '}
+					<span className="nowrap">[4-12 симв. включая !@#$%]</span>
 				</label>
 				<input
 					className={`form__input ${validPwdClass}`}
@@ -137,7 +137,7 @@ const EditUserForm = ({ user }) => {
 				/>
 
 				<label className="form__label form__checkbox-container" htmlFor="user-active">
-					ACTIVE:
+					Активен:
 					<input
 						className="form__checkbox"
 						id="user-active"
@@ -149,7 +149,7 @@ const EditUserForm = ({ user }) => {
 				</label>
 
 				<label className="form__label" htmlFor="roles">
-					ASSIGNED ROLES:
+					Роли:
 				</label>
 				<select
 					id="roles"

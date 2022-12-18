@@ -76,15 +76,15 @@ const NewUserForm = () => {
 
 			<form className="form" onSubmit={onSaveUserClicked}>
 				<div className="form__title-row">
-					<h2>New User</h2>
+					<h2>Новый пользователь</h2>
 					<div className="form__action-buttons">
-						<button className="icon-button" title="Save" disabled={!canSave}>
+						<button className="icon-button" title="Сохранить" disabled={!canSave}>
 							<FontAwesomeIcon icon={faSave} />
 						</button>
 					</div>
 				</div>
 				<label className="form__label" htmlFor="username">
-					Username: <span className="nowrap">[3-20 letters]</span>
+					Username: <span className="nowrap">[3-20 символов]</span>
 				</label>
 				<input
 					className={`form__input ${validUserClass}`}
@@ -97,7 +97,7 @@ const NewUserForm = () => {
 				/>
 
 				<label className="form__label" htmlFor="password">
-					Пароль: <span className="nowrap">[4-12 chars incl. !@#$%]</span>
+					Пароль: <span className="nowrap">[4-12 симв. включая !@#$%]</span>
 				</label>
 				<input
 					className={`form__input ${validPwdClass}`}

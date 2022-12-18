@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useUpdateNoteMutation, useDeleteNoteMutation } from './notesApiSlice';
+import { useEffect, useState } from 'react';
+import { useDeleteNoteMutation, useUpdateNoteMutation } from './notesApiSlice';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import useAuth from '../../hooks/useAuth';
 
 const EditNoteForm = ({ note, users }) => {
+	const { isManager, isAdmin } = useAuth();
 	const [updateNote, { isLoading, isSuccess, isError, error }] = useUpdateNoteMutation();
 
 	const [deleteNote, { isSuccess: isDeleteSuccess, isError: isDeleteError, error: deleteError }] =
@@ -75,6 +77,15 @@ const EditNoteForm = ({ note, users }) => {
 
 	const errContent = (error?.data?.message || deleteError?.data?.message) ?? '';
 
+	let deleteButton = null;
+	if (isManager || isAdmin) {
+		deleteButton = (
+			<button className="icon-button" title="Удалить" onClick={onDeleteNoteClicked}>
+				<FontAwesomeIcon icon={faTrashCan} />
+			</button>
+		);
+	}
+
 	return (
 		<>
 			<p className={errClass}>{errContent}</p>
@@ -85,19 +96,13 @@ const EditNoteForm = ({ note, users }) => {
 					<div className="form__action-buttons">
 						<button
 							className="icon-button"
-							title="Save"
+							title="Сохранить"
 							onClick={onSaveNoteClicked}
 							disabled={!canSave}
 						>
 							<FontAwesomeIcon icon={faSave} />
 						</button>
-						<button
-							className="icon-button"
-							title="Delete"
-							onClick={onDeleteNoteClicked}
-						>
-							<FontAwesomeIcon icon={faTrashCan} />
-						</button>
+						{deleteButton}
 					</div>
 				</div>
 				<label className="form__label" htmlFor="note-title">
