@@ -1,6 +1,7 @@
 import { useGetNotesQuery } from './notesApiSlice';
 import Note from './Note';
 import useAuth from '../../hooks/useAuth';
+import { PuffLoader } from 'react-spinners';
 
 const NotesList = () => {
 	const { username, isManager, isAdmin } = useAuth();
@@ -18,7 +19,7 @@ const NotesList = () => {
 
 	let content;
 
-	if (isLoading) content = <p>Загрузка...</p>;
+	if (isLoading) content = <PuffLoader color={'#FFF'} />;
 
 	if (isError) {
 		content = <p className="errmsg">{error?.data?.message}</p>;

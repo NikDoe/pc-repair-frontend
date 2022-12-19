@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setCredentials } from './authSlice';
 import { useLoginMutation } from './authApiSlice';
 import usePersist from '../../hooks/usePersist';
+import { PuffLoader } from 'react-spinners';
 
 const Login = () => {
 	const userRef = useRef();
@@ -55,7 +56,7 @@ const Login = () => {
 
 	const errClass = errMsg ? 'errmsg' : 'offscreen';
 
-	if (isLoading) return <p>Загрузка...</p>;
+	if (isLoading) return <PuffLoader color={'#FFF'} />;
 
 	return (
 		<section className="public">

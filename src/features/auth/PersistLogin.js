@@ -4,6 +4,7 @@ import { useRefreshMutation } from './authApiSlice';
 import usePersist from '../../hooks/usePersist';
 import { useSelector } from 'react-redux';
 import { selectCurrentToken } from './authSlice';
+import { PuffLoader } from 'react-spinners';
 
 const PersistLogin = () => {
 	const [persist] = usePersist();
@@ -33,7 +34,7 @@ const PersistLogin = () => {
 	if (!persist) {
 		content = <Outlet />;
 	} else if (isLoading) {
-		content = <p>Загрузка</p>;
+		content = <PuffLoader color={'#FFF'} />;
 	} else if (isError) {
 		content = (
 			<p className="errmsg">
