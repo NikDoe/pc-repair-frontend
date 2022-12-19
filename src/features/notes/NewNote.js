@@ -1,11 +1,15 @@
-import { useSelector } from 'react-redux';
-import { selectAllUsers } from '../users/usersApiSlice';
 import NewNoteForm from './NewNoteForm';
+import { useGetUsersQuery } from '../users/usersApiSlice';
+import { PuffLoader } from 'react-spinners';
 
 const NewNote = () => {
-	const users = useSelector(selectAllUsers);
+	const { users } = useGetUsersQuery('usersList', {
+		selectFromResult: ({ data }) => ({
+			users: data?.ids.map(id => data?.entities[id]),
+		}),
+	});
 
-	if (!users?.length) return <p>В настоящее время недоступно</p>;
+	if (!users?.length) return <PuffLoader color={'#FFF'} />;
 
 	return <NewNoteForm users={users} />;
 };
