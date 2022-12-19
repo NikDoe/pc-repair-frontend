@@ -2,8 +2,10 @@ import { useGetNotesQuery } from './notesApiSlice';
 import Note from './Note';
 import useAuth from '../../hooks/useAuth';
 import { PuffLoader } from 'react-spinners';
+import useTitle from '../../hooks/useTitle';
 
 const NotesList = () => {
+	useTitle('Список заметок');
 	const { username, isManager, isAdmin } = useAuth();
 	const {
 		data: notes,

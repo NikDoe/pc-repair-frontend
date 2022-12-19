@@ -1,8 +1,10 @@
 import { useGetUsersQuery } from './usersApiSlice';
 import User from './User';
 import { PuffLoader } from 'react-spinners';
+import useTitle from '../../hooks/useTitle';
 
 const UsersList = () => {
+	useTitle('Список пользователей');
 	const {
 		data: users,
 		isLoading,

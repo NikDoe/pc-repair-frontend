@@ -4,8 +4,10 @@ import { useGetNotesQuery } from './notesApiSlice';
 import { useGetUsersQuery } from '../users/usersApiSlice';
 import useAuth from '../../hooks/useAuth';
 import { PuffLoader } from 'react-spinners';
+import useTitle from '../../hooks/useTitle';
 
 const EditNote = () => {
+	useTitle('Редактирование заметки');
 	const { id } = useParams();
 
 	const { username, isManager, isAdmin } = useAuth();

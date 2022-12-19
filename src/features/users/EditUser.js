@@ -2,8 +2,10 @@ import { useParams } from 'react-router-dom';
 import EditUserForm from './EditUserForm';
 import { useGetUsersQuery } from './usersApiSlice';
 import { PuffLoader } from 'react-spinners';
+import useTitle from '../../hooks/useTitle';
 
 const EditUser = () => {
+	useTitle('Редактирование пользователя');
 	const { id } = useParams();
 
 	const { user } = useGetUsersQuery('usersList', {

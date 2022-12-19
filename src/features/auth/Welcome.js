@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import useTitle from '../../hooks/useTitle';
 
 const Welcome = () => {
 	const { username, isManager, isAdmin } = useAuth();
+	useTitle(`заметки: ${username}`);
 	const date = new Date();
 	const today = new Intl.DateTimeFormat('ru-RU', {
 		dateStyle: 'full',

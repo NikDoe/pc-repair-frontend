@@ -6,8 +6,10 @@ import { setCredentials } from './authSlice';
 import { useLoginMutation } from './authApiSlice';
 import usePersist from '../../hooks/usePersist';
 import { PuffLoader } from 'react-spinners';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+	useTitle('Вход в личный кабинет');
 	const userRef = useRef();
 	const errRef = useRef();
 	const [username, setUsername] = useState('');
